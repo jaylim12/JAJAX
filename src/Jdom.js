@@ -11,7 +11,7 @@ if ( !JDOM )
 (function () {
 	"use strict";
 	
-	if ( !window.$ && typeof window.$ !== 'function' ) {
+	if(!window.$&&typeof window.$!=='function') {
 		window.$ = function (id) {
 			return document.getElementById(id);
 		}
