@@ -12,6 +12,23 @@ if(!AJAX) AJAX = {};
 	var xmlhttp;
 	var onready=function(text) { alert(text); };
 	
+	Element.prototype.hasClassName = function(name) {
+		return new RegExp("(?:^|\\s+)" + name + "(?:\\s+|$)").test(this.className);
+	};
+
+	Element.prototype.addClassName = function(name) {
+		if(!this.hasClassName(name)) {
+			this.className = this.className ? [this.className, name].join(' ') : name;
+		}
+	};
+
+	Element.prototype.removeClassName = function(name) {
+		if(this.hasClassName(name)) {
+			var c = this.className;
+			this.className = c.replace(new RegExp("(?:^|\\s+)" + name + "(?:\\s+|$)", "g"), "");
+		}
+	};
+	
 	if(!window.$&&typeof window.$!=='function') {
 		window.$=function(query) {
 			return document.querySelectorAll(query);
