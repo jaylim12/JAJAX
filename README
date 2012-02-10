@@ -1,2 +1,8 @@
+AJAX method:
+ AJAX.call(url,parameter,callback_function);
+ - GET method, include parameter in `url` and leave `parameter` as `null`
+ - POST method, include all parameters in `parameter`
+
 change log:
  - all queries are based on query selector. No more select by id.
+ - trim Jdom useless functions.
