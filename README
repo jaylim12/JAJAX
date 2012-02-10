@@ -1,1 +1,2 @@
-Hello World
+change log:
+ - all queries are based on query selector. No more select by id.
