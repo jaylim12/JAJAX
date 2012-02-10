@@ -12,13 +12,13 @@ if ( !JDOM )
 	"use strict";
 	
 	if(!window.$&&typeof window.$!=='function') {
-		window.$ = function (id) {
-			return document.getElementById(id);
+		window.$=function (query) {
+			return document.querySelectorAll(query);
 		}
 	}
 	
 	function check(id) {
-		if ( $(id) ) return true;
+		if($(id)) return true;
 		throw new Error('No such id!');
 	}
 	

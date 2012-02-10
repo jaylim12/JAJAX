@@ -13,8 +13,8 @@ if(!AJAX) AJAX = {};
 	var onready=function(text) { alert(text); };
 	
 	if(!window.$&&typeof window.$!=='function') {
-		window.$=function(id) {
-			return document.getElementById(id);
+		window.$=function(query) {
+			return document.querySelectorAll(query);
 		}
 	}
 	
@@ -45,7 +45,7 @@ if(!AJAX) AJAX = {};
 			if(!xmlhttp) throw new Error('Ajax not supported!');
 			return function(url,param,func) {
 				if(func&&typeof func==='function') onready=func;
-				xmlhttp.open( (param?'POST':'GET'), url, true);
+				xmlhttp.open((param?'POST':'GET'),url,true);
 				if(param) xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				xmlhttp.send(param);
 			};
